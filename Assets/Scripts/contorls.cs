@@ -7,7 +7,9 @@ public class contorls : MonoBehaviour
     Rigidbody2D RB;
     [SerializeField]
     private bool IsGrounded;
+    [SerializeField]
     Sprite Shouvle_Out;
+    Sprite original_sprite;
     [SerializeField]
     SpriteRenderer SR;
     // Start is called before the first frame update
@@ -15,6 +17,7 @@ public class contorls : MonoBehaviour
     {
         RB = GetComponent<Rigidbody2D>();
         SR = GetComponent<SpriteRenderer>();
+        original_sprite = SR.sprite;
     }
 
     // Update is called once per frame
@@ -44,9 +47,12 @@ public class contorls : MonoBehaviour
         {
             SR.sprite = Shouvle_Out;
         }
-        
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            SR.sprite = original_sprite;
+        }
 
-        
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
