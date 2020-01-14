@@ -10,31 +10,35 @@ public class contorls : MonoBehaviour
     [SerializeField]
     Sprite Shouvle_Out;
     Sprite original_sprite;
-    [SerializeField]
-    SpriteRenderer SR;
+    Animator Anim;
     // Start is called before the first frame update
     void Start()
     {
         RB = GetComponent<Rigidbody2D>();
-        SR = GetComponent<SpriteRenderer>();
-        original_sprite = SR.sprite;
+        Anim = GetComponent<Animator>();
+        //original_sprite = SR.sprite;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKey(KeyCode.D))
         {
-            RB.velocity = new Vector3(5, RB.velocity.y, 0); 
+            RB.velocity = new Vector3(5, RB.velocity.y, 0);
+            Anim.SetBool("Walking", true);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
+
+            Anim.SetBool("Walking", true);
             RB.velocity = new Vector3(-5, RB.velocity.y, 0);
         }
 
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
+            Anim.SetBool("Walking", false);
             RB.velocity = new Vector3(0, 0, 0);
         }
         if (Input.GetKeyDown(KeyCode.W) && IsGrounded==true) 
@@ -42,14 +46,32 @@ public class contorls : MonoBehaviour
             RB.velocity = new Vector3(RB.velocity.x, 7, 0);
             IsGrounded = false;
         }
+        
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            SR.sprite = Shouvle_Out;
+            // SR.sprite = Shouvle_Out;
+            if (Anim)
+            {
+                Debug.Log("ja");
+               
+            }
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            SR.sprite = original_sprite;
+            
+        }
+
+
+    }
+    void OnTriggerStay2D(Collider2D Trigger)
+    {
+        if (Anim)
+        {
+            if (Trigger.tag == "dig")
+            {
+                Destroy(Trigger.gameObject);
+            }
         }
 
 
@@ -58,4 +80,13 @@ public class contorls : MonoBehaviour
     {
         IsGrounded = true;
     }
+
+     
+        
+    private void OnTrigger(Collider2D Trigger)
+    {
+       
+    
+    }
+    
 }
