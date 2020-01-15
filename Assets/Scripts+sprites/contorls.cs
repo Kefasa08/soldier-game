@@ -12,7 +12,7 @@ public class contorls : MonoBehaviour
     Sprite original_sprite;
     Animator Anim;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         RB = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
@@ -20,7 +20,7 @@ public class contorls : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         
         if (Input.GetKey(KeyCode.D))
@@ -73,8 +73,11 @@ public class contorls : MonoBehaviour
                 Destroy(Trigger.gameObject);
             }
         }
-
-
+        if (Trigger.tag == "soldier" && Input.GetKeyDown(KeyCode.E))
+        {
+            Destroy(Trigger.gameObject);
+            Anim.SetBool("Walking", true);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -88,5 +91,11 @@ public class contorls : MonoBehaviour
        
     
     }
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       
+    }
+
+
+
 }
