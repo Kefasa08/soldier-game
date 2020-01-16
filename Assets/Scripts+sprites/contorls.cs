@@ -6,11 +6,13 @@ public class contorls : MonoBehaviour
 {
     Rigidbody2D RB;
     [SerializeField]
-    private bool IsGrounded;
-    [SerializeField]
     Sprite Shouvle_Out;
     Sprite original_sprite;
     Animator Anim;
+    public bool IsGrounded;
+    public bool inAirCollision;
+    public bool DigAnim = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,31 +24,36 @@ public class contorls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetKey(KeyCode.D))
+
+        if (Input.GetKey(KeyCode.D) && !inAirCollision)
         {
-            RB.velocity = new Vector3(5, RB.velocity.y, 0);
+            RB.velocity = new Vector3(2, RB.velocity.y, 0);
             Anim.SetBool("Walking", true);
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && !inAirCollision)
         {
+            Debug.Log(":)");
 
             Anim.SetBool("Walking", true);
-            RB.velocity = new Vector3(-5, RB.velocity.y, 0);
+            RB.velocity = new Vector3(-2, RB.velocity.y, 0);
+            //RB.velocity = Vector3.zero;
+
         }
 
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
             Anim.SetBool("Walking", false);
             RB.velocity = new Vector3(0, 0, 0);
+            
         }
-        if (Input.GetKeyDown(KeyCode.W) && IsGrounded==true) 
+
+        if (Input.GetKeyDown(KeyCode.W) && IsGrounded == true)
         {
-            RB.velocity = new Vector3(RB.velocity.x, 7, 0);
-            IsGrounded = false;
+            RB.velocity = new Vector3(RB.velocity.x, 5, 0);
+            
         }
-        
+
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
@@ -54,6 +61,7 @@ public class contorls : MonoBehaviour
             if (Anim)
             {
                 Debug.Log("ja");
+
                
             }
         }
@@ -61,25 +69,40 @@ public class contorls : MonoBehaviour
         {
             
         }
+        
 
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (IsGrounded == false)
+        {
+            Debug.Log("hej");
+            inAirCollision = true;
+            RB.velocity = new Vector3(0, RB.velocity.y, 0);
+        }
 
     }
     void OnTriggerStay2D(Collider2D Trigger)
     {
-        if (Anim)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+
             if (Trigger.tag == "dig")
             {
                 Destroy(Trigger.gameObject);
+                Anim.SetBool("Walking", false);
+                Anim.SetTrigger("Digging");
+
+            }
+            else if (Trigger.tag!= "dig")
+            {
+
             }
         }
 
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        IsGrounded = true;
-    }
+  
 
      
         
