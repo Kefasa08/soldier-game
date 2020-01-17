@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 2949a3710eae1ec4ebbd34a76b8ae612
+guid: dc8283054e1e4004daa08fe56f688fa0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 716401062287127482
-    second: WALK_SPADE_SPRITE_SHEET_0
+      213: 5028448066110123750
+    second: Walkspade_0
   - first:
-      213: 8082918667650404683
-    second: WALK_SPADE_SPRITE_SHEET_1
+      213: -5045146518795218761
+    second: Walkspade_1
+  - first:
+      213: 8655678895807063352
+    second: Walkspade_2
+  - first:
+      213: -3122495041331569526
+    second: Walkspade_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -49,9 +55,9 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 3000
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,9 +73,9 @@ TextureImporter:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -78,9 +84,9 @@ TextureImporter:
   - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -90,13 +96,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WALK_SPADE_SPRITE_SHEET_0
+      name: Walkspade_0
       rect:
         serializedVersion: 2
-        x: 228
-        y: 1020
-        width: 228
-        height: 306
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -104,20 +110,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2479a2293b137b40ae77723fad06ec1
-      internalID: 716401062287127482
+      spriteID: 710d7b7e5b5ac074c9e26e9d1f4c0cb7
+      internalID: 5028448066110123750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WALK_SPADE_SPRITE_SHEET_1
+      name: Walkspade_1
       rect:
         serializedVersion: 2
-        x: 228
-        y: 252
-        width: 228
-        height: 312
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,8 +131,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be0bccb7e12f3464c900edd0a8d2d184
-      internalID: 8082918667650404683
+      spriteID: 58a0819681a84d545864d6ae076b8ed2
+      internalID: -5045146518795218761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walkspade_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57a64e7773d2ce488dfc23ebac72929
+      internalID: 8655678895807063352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walkspade_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb26c06134e501f4291680d497563301
+      internalID: -3122495041331569526
       vertices: []
       indices: 
       edges: []
@@ -134,7 +182,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 437257ce92b0c5a4b85c29f5dcdcd338
+    spriteID: 5551d5419c805be428e213e112e8f2f6
     internalID: 0
     vertices: []
     indices: 
