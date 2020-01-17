@@ -50,6 +50,7 @@ public class contorls : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W) && IsGrounded == true)
         {
+            Anim.SetTrigger("Jumping");
             RB.velocity = new Vector3(RB.velocity.x, 5, 0);
 
         }
@@ -92,6 +93,7 @@ public class contorls : MonoBehaviour
                 Destroy(Trigger.gameObject);
                 Anim.SetBool("Walking", false);
                 Anim.SetTrigger("Digging");
+                
 
             }
             else if (Trigger.tag != "dig")
