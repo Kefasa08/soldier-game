@@ -11,12 +11,15 @@ public class contorls : MonoBehaviour
     Sprite Shouvle_Out;
     Sprite original_sprite;
     Animator Anim;
+    // Start is called before the first frame update
     public void Start()
     {
         RB = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
         //original_sprite = SR.sprite;
     }
+
+    // Update is called once per frame
     public void Update()
     {
         
@@ -43,6 +46,8 @@ public class contorls : MonoBehaviour
             RB.velocity = new Vector3(RB.velocity.x, 7, 0);
             IsGrounded = false;
         }
+        
+
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
             // SR.sprite = Shouvle_Out;
@@ -56,6 +61,8 @@ public class contorls : MonoBehaviour
         {
             
         }
+
+
     }
     void OnTriggerStay2D(Collider2D Trigger)
     {
@@ -70,11 +77,25 @@ public class contorls : MonoBehaviour
         {
             Destroy(Trigger.gameObject);
             Anim.SetBool("Walking", true);
-
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         IsGrounded = true;
     }
+
+     
+        
+    private void OnTrigger(Collider2D Trigger)
+    {
+       
+    
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       
+    }
+
+
+
 }
