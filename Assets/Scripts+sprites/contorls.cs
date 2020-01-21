@@ -70,7 +70,7 @@ public class contorls : MonoBehaviour
         {
 
         }
-
+       
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -101,6 +101,7 @@ public class contorls : MonoBehaviour
 
             }
         }
+
 
 
     }
