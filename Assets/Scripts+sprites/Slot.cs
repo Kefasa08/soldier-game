@@ -25,4 +25,11 @@ public class Slot : MonoBehaviour
             GameObject.Destroy(child.gameObject);
         }
     }
+    void OnTriggerStay2D(Collider2D Trigger)
+    {
+        if(inventory.isFull[i] == true && Trigger.tag == "dig")
+        {
+            Destroy(Trigger.gameObject);
+        }
+    }
 }
