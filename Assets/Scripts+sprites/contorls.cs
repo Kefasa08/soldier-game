@@ -90,9 +90,13 @@ public class contorls : MonoBehaviour
 
             if (Trigger.tag == "dig")
             {
-                Destroy(Trigger.gameObject);
                 Anim.SetBool("Walking", false);
                 Anim.SetTrigger("Digging");
+                {
+                    Destroy(Trigger.gameObject);
+                }
+               
+               
                 
 
             }
