@@ -29,7 +29,7 @@ public class Slot : MonoBehaviour
     {
         if(inventory.isFull[i] == true && Trigger.tag == "dig")
         {
-            Destroy(Trigger.gameObject);
+           //Destroy(Trigger.gameObject);
         }
     }
 }
