@@ -92,13 +92,8 @@ public class contorls : MonoBehaviour
             {
                 Anim.SetBool("Walking", false);
                 Anim.SetTrigger("Digging");
-                {
-                    Destroy(Trigger.gameObject);
-                }
-               
-               
-                
-
+                StartCoroutine(DestroyObject(Trigger.gameObject));
+              
             }
             else if (Trigger.tag != "dig")
             {
@@ -110,7 +105,11 @@ public class contorls : MonoBehaviour
 
     }
 
-
+    IEnumerator DestroyObject (GameObject objectToDestroy)
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(objectToDestroy);
+    }
 
 
     private void OnTrigger(Collider2D Trigger)
