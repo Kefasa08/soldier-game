@@ -12,6 +12,9 @@ public class contorls : MonoBehaviour
     public bool IsGrounded;
     public bool inAirCollision;
     public bool DigAnim = false;
+    public bool facingRight = true;
+    public float moveInput;
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -73,6 +76,9 @@ public class contorls : MonoBehaviour
        
 
     }
+
+  
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (IsGrounded == false)
@@ -117,5 +123,29 @@ public class contorls : MonoBehaviour
 
 
     }
+    public void FixedUpdate()
+    {
+        moveInput = Input.GetAxis("Horizontal");
+        Debug.Log(moveInput);
+        RB.velocity = new Vector3(moveInput * speed, RB.velocity.y, 0);
 
+        if (facingRight == false && moveInput > 0)
+        {
+            Flip();
+        }
+        else if (facingRight == true && moveInput < 0)
+        {
+            Flip();
+        }
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left);
+        Debug.DrawRay(transform.position, Vector2.left * 100, Color.magenta);
+
+    }
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
+    }
 }

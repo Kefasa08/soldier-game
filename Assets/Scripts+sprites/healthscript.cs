@@ -32,9 +32,4 @@ public class healthscript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void GiveHp(float amount)
-    {
-        cur_health += givehealth;
-        SetHealthBar();
-    }
 }

@@ -16,7 +16,7 @@ public class BulletSpawner : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Bullet current = Instantiate(prefab, transform.position, Quaternion.identity).GetComponent<Bullet>();
-            current.direction = transform.parent.parent.localScale.x;
+            current.direction = transform.parent.parent.localScale.x * -1;
 
         }
 
