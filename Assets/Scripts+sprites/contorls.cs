@@ -21,7 +21,6 @@ public class contorls : MonoBehaviour
     {
         RB = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
-        //original_sprite = SR.sprite;
     }
 
     // Update is called once per frame
@@ -36,11 +35,8 @@ public class contorls : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A) && !inAirCollision)
         {
-            Debug.Log(":)");
-
             Anim.SetBool("Walking", true);
             RB.velocity = new Vector3(-2, RB.velocity.y, 0);
-            //RB.velocity = Vector3.zero;
 
         }
 
@@ -57,33 +53,14 @@ public class contorls : MonoBehaviour
             RB.velocity = new Vector3(RB.velocity.x, 5, 0);
 
         }
-
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // SR.sprite = Shouvle_Out;
-            if (Anim)
-            {
-                Debug.Log("ja");
-
-
-            }
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-
-        }
-       
-
     }
 
   
 
-    private void OnCollisionEnter2D(Collision2D collision)
+   /* private void OnCollisionEnter2D(Collision2D collision)
     {
         if (IsGrounded == false)
         {
-            Debug.Log("hej");
             inAirCollision = true;
             RB.velocity = new Vector3(0, RB.velocity.y, 0);
         }
@@ -122,12 +99,10 @@ public class contorls : MonoBehaviour
     {
 
 
-    }
+    }*/
     public void FixedUpdate()
     {
         moveInput = Input.GetAxis("Horizontal");
-        //Debug.Log(moveInput);
-        //RB.velocity = new Vector3(moveInput * speed, RB.velocity.y, 0);
 
         if (facingRight == false && moveInput > 0)
         {
@@ -137,8 +112,6 @@ public class contorls : MonoBehaviour
         {
             Flip();
         }
-       // RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left);
-       // Debug.DrawRay(transform.position, Vector2.left * 100, Color.magenta);
 
     }
     void Flip()

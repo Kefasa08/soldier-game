@@ -877,6 +877,9 @@ MonoBehaviour:
   IsGrounded: 0
   inAirCollision: 0
   DigAnim: 0
+  facingRight: 1
+  moveInput: 0
+  speed: 0
 --- !u!50 &625261631
 Rigidbody2D:
   serializedVersion: 4
@@ -1471,7 +1474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803510990}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 456342190}
