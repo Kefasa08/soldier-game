@@ -126,8 +126,8 @@ public class contorls : MonoBehaviour
     public void FixedUpdate()
     {
         moveInput = Input.GetAxis("Horizontal");
-        Debug.Log(moveInput);
-        RB.velocity = new Vector3(moveInput * speed, RB.velocity.y, 0);
+        //Debug.Log(moveInput);
+        //RB.velocity = new Vector3(moveInput * speed, RB.velocity.y, 0);
 
         if (facingRight == false && moveInput > 0)
         {
@@ -137,8 +137,8 @@ public class contorls : MonoBehaviour
         {
             Flip();
         }
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left);
-        Debug.DrawRay(transform.position, Vector2.left * 100, Color.magenta);
+       // RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left);
+       // Debug.DrawRay(transform.position, Vector2.left * 100, Color.magenta);
 
     }
     void Flip()

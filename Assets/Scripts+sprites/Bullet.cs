@@ -12,7 +12,8 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         bullet = GetComponent<Rigidbody>();
-        bullet.velocity = new Vector3(100, 0, 0);
+        //bullet.velocity = new Vector3(100, 0, 0);
+        print(transform.position);
     }
 
     public void Update()
