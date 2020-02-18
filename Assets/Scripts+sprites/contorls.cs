@@ -16,6 +16,8 @@ public class contorls : MonoBehaviour
     public float moveInput;
     public float speed;
 
+  
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +55,7 @@ public class contorls : MonoBehaviour
             RB.velocity = new Vector3(RB.velocity.x, 5, 0);
 
         }
+        
     }
 
   
