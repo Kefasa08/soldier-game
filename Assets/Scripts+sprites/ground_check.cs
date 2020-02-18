@@ -14,7 +14,6 @@ public class ground_check : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.name);
         player.IsGrounded = true;
         player.inAirCollision = false;
         
