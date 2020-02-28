@@ -9,6 +9,8 @@ TagManager:
   - soldier
   - player
   - Enemy
+  - Bullet
+  - Bandage
   layers:
   - Default
   - TransparentFX
