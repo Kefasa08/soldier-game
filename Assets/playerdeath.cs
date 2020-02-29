@@ -10,11 +10,11 @@ public class playerdeath : MonoBehaviour
 
     void Update()
     {
-        if (player == null)
+        /*if (player == null)
         {
             print("aa");
             SceneManager.LoadScene(2);
 
-        }
+        }*/
     }
 }
