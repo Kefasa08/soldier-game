@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemyshootingAI : MonoBehaviour
 {
@@ -18,12 +17,12 @@ public class EnemyshootingAI : MonoBehaviour
 
     void Update()
     {
-        if(Vector2.Distance(transform.position, player.position) < 200f)
+        if(Vector2.Distance(transform.position, player.position) < 10f)
         {
-            if (timeBtwShots == startTimebtwShots)
+            if (timeBtwShots <= 0)
             {
                 GameObject bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
-
+                timeBtwShots = startTimebtwShots;
             }
             else
             {

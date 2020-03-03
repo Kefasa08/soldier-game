@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Heart : MonoBehaviour
 {
@@ -37,6 +38,11 @@ public class Heart : MonoBehaviour
             {
                 hearts[i].enabled = false;
             }
+        }
+
+        if(health == 0)
+        {
+            SceneManager.LoadScene(2);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
