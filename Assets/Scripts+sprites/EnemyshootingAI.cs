@@ -8,8 +8,10 @@ public class EnemyshootingAI : MonoBehaviour
     public Transform shotPoint;
     public Transform player;
 
+    public float range = 10f;
     private float timeBtwShots;
     public float startTimebtwShots;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("player").transform;
@@ -17,7 +19,7 @@ public class EnemyshootingAI : MonoBehaviour
 
     void Update()
     {
-        if(Vector2.Distance(transform.position, player.position) < 10f)
+        if(Vector2.Distance(transform.position, player.position) < range)
         {
             if (timeBtwShots <= 0)
             {
@@ -28,15 +30,6 @@ public class EnemyshootingAI : MonoBehaviour
             {
                 timeBtwShots -= Time.deltaTime;
             }
-
-
-            
-            
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        
     }
 }
