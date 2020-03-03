@@ -44,6 +44,7 @@ public class Heart : MonoBehaviour
         if (collision.tag == "Bullet")
         {
             health -= 1;
+            Destroy(collision.gameObject);
         }
         if (collision.tag == "Bandage")
         {

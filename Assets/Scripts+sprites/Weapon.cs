@@ -22,7 +22,7 @@ public class Weapon : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Instantiate(projectile, shotPoint.position, transform.rotation);
+               GameObject bullet = Instantiate(projectile, shotPoint.position,transform.rotation);
                 timeBtwShots = startTimebtwShots;
             }
         }

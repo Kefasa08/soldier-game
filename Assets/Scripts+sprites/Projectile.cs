@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     }
     void Update()
     {
-        transform.Translate(transform.up * speed * Time.deltaTime);
+        transform.Translate(Vector2.up * speed * Time.deltaTime);
     }
     void DestroyProjectile()
     {
@@ -21,7 +21,12 @@ public class Projectile : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<healthscript>().TakeDamage(damage);
-        Destroy(gameObject);
+        if(collision.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<healthscript>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+      
     }
+   
 }
