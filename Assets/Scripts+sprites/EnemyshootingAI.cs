@@ -11,6 +11,7 @@ public class EnemyshootingAI : MonoBehaviour
     public float range = 10f;
     private float timeBtwShots;
     public float startTimebtwShots;
+    
 
     void Start()
     {
@@ -30,6 +31,8 @@ public class EnemyshootingAI : MonoBehaviour
             {
                 timeBtwShots -= Time.deltaTime;
             }
+
+          
         }
     }
 }
