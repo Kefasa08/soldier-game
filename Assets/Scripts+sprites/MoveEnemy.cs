@@ -36,10 +36,6 @@ public class MoveEnemy : MonoBehaviour
             }
         }
 
-
-
     }
-
-
 
 }
