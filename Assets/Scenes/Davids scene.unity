@@ -2436,14 +2436,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1863554406}
   - component: {fileID: 1863554403}
-  - component: {fileID: 1863554407}
   - component: {fileID: 1863554405}
   - component: {fileID: 1863554401}
   - component: {fileID: 1863554408}
   - component: {fileID: 1863554409}
   - component: {fileID: 1863554404}
   - component: {fileID: 1863554402}
-  - component: {fileID: 1863554400}
   m_Layer: 8
   m_Name: player
   m_TagString: player
@@ -2451,18 +2449,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1863554400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863554399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33caa5531ddbc634cb95ab0b2d5928f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1863554401
 Animator:
   serializedVersion: 3
@@ -2610,38 +2596,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1863554407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863554399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 814d8dfbb25c8df428505707c4aff562, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_JumpForce: 700
-  m_CrouchSpeed: 0.4
-  m_MovementSmoothing: 0.05
-  m_AirControl: 1
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 55
-  m_GroundCheck: {fileID: 1270221150}
-  m_CeilingCheck: {fileID: 386447933}
-  m_CrouchDisableCollider: {fileID: 0}
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: CharacterController2D+BoolEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1863554408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3621,6 +3575,7 @@ MonoBehaviour:
   player: {fileID: 1863554406}
   range: 10
   startTimebtwShots: 1
+  offset: 0
 --- !u!4 &5988637453467751193
 Transform:
   m_ObjectHideFlags: 0
