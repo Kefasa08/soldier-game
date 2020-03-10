@@ -45,7 +45,7 @@ public class contorls : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
             Anim.SetBool("Walking", false);
-            RB.velocity = new Vector3(0, 0, 0);
+            RB.velocity = new Vector3(0, RB.velocity.y, 0);
 
         }
 
@@ -53,7 +53,7 @@ public class contorls : MonoBehaviour
         {
             Anim.SetTrigger("Jumping");
             RB.velocity = new Vector3(RB.velocity.x, 5, 0);
-
+            Debug.Log("jump");
         }
         
     }
