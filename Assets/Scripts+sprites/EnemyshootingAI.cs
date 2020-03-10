@@ -11,6 +11,7 @@ public class EnemyshootingAI : MonoBehaviour
     public float range = 10f;
     private float timeBtwShots;
     public float startTimebtwShots;
+    public float offset;
     
 
     void Start()
@@ -22,6 +23,9 @@ public class EnemyshootingAI : MonoBehaviour
     {
         if(Vector2.Distance(transform.position, player.position) < range)
         {
+            Vector3 difference = Camera.main.ScreenToWorldPoint(player.position) - transform.position;
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
             if (timeBtwShots <= 0)
             {
                 GameObject bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
