@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - Bullet
   - Bandage
+  - Mina
+  - minaExplotion
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - ground
   - 
   - 
   - 

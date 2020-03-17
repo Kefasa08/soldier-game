@@ -15,7 +15,6 @@ public class contorls : MonoBehaviour
     public bool facingRight = true;
     public float moveInput;
     public float speed;
-
   
 
     // Start is called before the first frame update
@@ -28,7 +27,7 @@ public class contorls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
         if (Input.GetKey(KeyCode.D) && !inAirCollision)
         {
             RB.velocity = new Vector3(2, RB.velocity.y, 0);
@@ -45,7 +44,7 @@ public class contorls : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
             Anim.SetBool("Walking", false);
-            RB.velocity = new Vector3(0, 0, 0);
+            RB.velocity = new Vector3(0, RB.velocity.y, 0);
 
         }
 
