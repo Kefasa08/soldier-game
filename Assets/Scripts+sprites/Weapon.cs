@@ -35,6 +35,7 @@ public class Weapon : MonoBehaviour
                 {
                     GameObject bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
                     timeBtwShots = startTimebtwShots;
+                   Camera.main.gameObject.GetComponent<ScreenShakeController>().StartShake(.25f, 1f);
                 }
             }
             else

@@ -13,7 +13,7 @@ public class ScreenShakeController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            StartShake(.5f, 1f);
+            //StartShake(.5f, 1f);
         }
     }
     private void LateUpdate()
@@ -22,8 +22,8 @@ public class ScreenShakeController : MonoBehaviour
         {
             shakeTimeRemaining -= Time.deltaTime;
 
-            float xAmount = Random.Range(-1f, 1f) * shakePower;
-            float yAmount = Random.Range(-1f, 1f) * shakePower;
+            float xAmount = Random.Range(-.1f, .1f) * shakePower;
+            float yAmount = Random.Range(-.1f, .1f) * shakePower;
 
             transform.position += new Vector3(xAmount, yAmount, 0f);
         }
