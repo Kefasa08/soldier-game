@@ -52,7 +52,7 @@ public class contorls : MonoBehaviour
         {
             Anim.SetTrigger("Jumping");
             RB.velocity = new Vector3(RB.velocity.x, 5, 0);
-
+            Debug.Log("jump");
         }
         
     }

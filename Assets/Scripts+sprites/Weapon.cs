@@ -8,9 +8,18 @@ public class Weapon : MonoBehaviour
     public GameObject projectile;
     public Transform shotPoint;
     public GameObject playerObject;
+    private Collider2D WeaponColl;
    
     private float timeBtwShots;
     public float startTimebtwShots;
+
+
+
+
+    private void Start()
+    {
+        WeaponColl = GetComponent<Collider2D>();
+    }
 
     void Update()
     {
@@ -42,6 +51,7 @@ public class Weapon : MonoBehaviour
         {
             gameObject.transform.parent = playerObject.transform;
             transform.position = playerObject.transform.position;
+            WeaponColl.enabled = false;
         }
     }
 }

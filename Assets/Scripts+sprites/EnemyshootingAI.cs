@@ -11,8 +11,7 @@ public class EnemyshootingAI : MonoBehaviour
     public float range = 10f;
     private float timeBtwShots;
     public float startTimebtwShots;
-    
-
+  
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("player").transform;
@@ -22,6 +21,7 @@ public class EnemyshootingAI : MonoBehaviour
     {
         if(Vector2.Distance(transform.position, player.position) < range)
         {
+          
             if (timeBtwShots <= 0)
             {
                 GameObject bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
