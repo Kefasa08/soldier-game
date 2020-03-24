@@ -13,17 +13,17 @@ public class DeathScreen : MonoBehaviour
 
     }
 
-    public void ExitGame()
+    public void ExitGame()   // denhär koden är gjord för att stänga av spelet
     {
         print("exit");
         Application.Quit();
 
     }
 
-    public void Restartgame()
+    public void Restartgame()         // denhär koden är till för att flytta spelaren från en scen till en annan
     {
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4);
         print("funkar");
     }
 
