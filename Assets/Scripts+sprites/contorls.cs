@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class contorls : MonoBehaviour
 {
@@ -28,33 +29,37 @@ public class contorls : MonoBehaviour
     void Update()
     {
        
-        if (Input.GetKey(KeyCode.D) && !inAirCollision)
+        if (Input.GetKey(KeyCode.D) && !inAirCollision)      // denhär koden gör så att karaktären rör sig frammot när man trycker på D förutom om man är i luften, den sätter även igong animationen när karaktären rör sig
         {
             RB.velocity = new Vector3(2, RB.velocity.y, 0);
             Anim.SetBool("Walking", true);
         }
 
-        if (Input.GetKey(KeyCode.A) && !inAirCollision)
+        if (Input.GetKey(KeyCode.A) && !inAirCollision)     // denhär koden gör så att karaktären rör sig bakot när man trycker på A förutom om man är i luften, den sätter även igong animationen när karaktären rör sig
         {
             Anim.SetBool("Walking", true);
             RB.velocity = new Vector3(-2, RB.velocity.y, 0);
 
         }
 
-        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))   // denhär koden är till för att stoppa walk animationen när karaktären slutar röra sig
         {
             Anim.SetBool("Walking", false);
             RB.velocity = new Vector3(0, RB.velocity.y, 0);
 
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && IsGrounded == true)
+        if (Input.GetKeyDown(KeyCode.W) && IsGrounded == true)     //denhär delen av koden gör så att man kan hoppa när man trycker på W och sätter igong animationen
         {
             Anim.SetTrigger("Jumping");
             RB.velocity = new Vector3(RB.velocity.x, 5, 0);
-            Debug.Log("jump");
+            Debug.Log("jump");                                       
         }
         
+        if (transform.position.y<=-5)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
   
@@ -102,7 +107,7 @@ public class contorls : MonoBehaviour
 
 
     }*/
-    public void FixedUpdate()
+    public void FixedUpdate()       // denhär koden gör så att karaktären titar åt hollet man går mot
     {
         moveInput = Input.GetAxis("Horizontal");
 
@@ -123,4 +128,6 @@ public class contorls : MonoBehaviour
         Scaler.x *= -1;
         transform.localScale = Scaler;
     }
+
+   
 }
