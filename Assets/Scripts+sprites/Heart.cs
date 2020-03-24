@@ -40,7 +40,7 @@ public class Heart : MonoBehaviour
             }
         }
 
-        if(health == 0)
+        if(health <= 0)
         {
             SceneManager.LoadScene(2);
         }

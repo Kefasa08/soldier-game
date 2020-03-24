@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed;
-    public float damage = 5f;
-    public float lifeTime;
+    public float speed;//hastigheten projektilen ska ha
+    public float damage = 5f;//värdet för hur mycket damage den ska göra
+    public float lifeTime;//tiden som projektilen ska finnas innan den förstörs
     void Start()
     {
         Invoke("DestroyProjectile", lifeTime);

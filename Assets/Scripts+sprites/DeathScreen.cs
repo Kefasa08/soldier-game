@@ -7,6 +7,7 @@ public class DeathScreen : MonoBehaviour
 {
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,9 @@ public class DeathScreen : MonoBehaviour
     }
 
     public void ExitGame()   // denhär koden är gjord för att stänga av spelet
+
+    public void ExitGame()
+
     {
         print("exit");
         Application.Quit();
@@ -26,5 +30,4 @@ public class DeathScreen : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4);
         print("funkar");
     }
-
 }
