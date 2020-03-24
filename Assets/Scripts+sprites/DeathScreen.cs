@@ -14,20 +14,18 @@ public class DeathScreen : MonoBehaviour
 
     }
 
+
     public void ExitGame()   // denhär koden är gjord för att stänga av spelet
-
-    public void ExitGame()
-
     {
         print("exit");
         Application.Quit();
 
     }
 
-    public void Restartgame()         // denhär koden är till för att flytta spelaren från en scen till en annan
+    public void Restartgame()         // denhär koden är till för att flytta spelaren från endscenen till tutorial scenen
     {
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4);
+        SceneManager.LoadScene(3);
         print("funkar");
     }
 }
