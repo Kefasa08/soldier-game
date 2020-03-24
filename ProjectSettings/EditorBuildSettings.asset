@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: b36c63ab33388e643af6fdd4d6bd15e0
   - enabled: 1
-    path: Assets/Scenes/soldier game.unity
-    guid: 240ba46b3b7673544bc0ce9a65a5d750
+    path: Assets/Scenes/TUTORIAL.unity
+    guid: 7edbdcf895ab9ec4f9a76d4de72958d3
   - enabled: 1
     path: Assets/Scenes/GameOverScheen.unity
     guid: 980985aa34ffeb44f8de27011c76246a
+  - enabled: 1
+    path: Assets/Scenes/TUTORIAL.unity
+    guid: 7edbdcf895ab9ec4f9a76d4de72958d3
   m_configObjects: {}

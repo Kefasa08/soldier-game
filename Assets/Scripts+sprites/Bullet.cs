@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public float lifeTime; //tiden för hur snabbt den ska förstöras efter kulan har instantiatats
     void Start()
     {
-        Invoke("DestroyProjectile", lifeTime); //Förstör kulan 
+        Invoke("DestroyProjectile", lifeTime); //Förstör kulan efter den tid som lifetime har i värde
     }
     void Update()
     {
