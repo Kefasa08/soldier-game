@@ -5,14 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class DeathScreen : MonoBehaviour
 {
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     public void ExitGame()
     {
         print("exit");
@@ -26,5 +18,4 @@ public class DeathScreen : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         print("funkar");
     }
-
 }

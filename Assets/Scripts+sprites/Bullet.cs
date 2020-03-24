@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed;
-    public float lifeTime;
+    public float speed; //variabel för hastigheten kulan ska färdas i
+    public float lifeTime; //tiden för hur snabbt den ska förstöras efter kulan har instantiatats
     void Start()
     {
-        Invoke("DestroyProjectile", lifeTime);
+        Invoke("DestroyProjectile", lifeTime); //Förstör kulan 
     }
     void Update()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
-    void DestroyProjectile()
+    void DestroyProjectile()//metod för att förstöra objektet
     {
-        Destroy(gameObject);
+        Destroy(gameObject); 
     }
    
 }
